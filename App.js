@@ -1,5 +1,5 @@
-import * as React from "react";
-import { useState } from "react";
+import * as React from 'react';
+import { useState } from 'react';
 import {
   ScrollView,
   View,
@@ -7,42 +7,46 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-} from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const productsList = [
   {
     key: Math.random().toString(),
     id: 1,
-    name: "ZINGER",
+    name: 'ZINGER',
     price: 460,
-    img: "https://i.pinimg.com/originals/60/20/cd/6020cd114517ed543e19b94e30e6d20d.png",
-    brand: "KFC",
+    img:
+      'https://i.pinimg.com/originals/60/20/cd/6020cd114517ed543e19b94e30e6d20d.png',
+    brand: 'KFC',
   },
   {
     key: Math.random().toString(),
     id: 2,
-    name: "3 PCS CHICKEN",
+    name: '3 PCS CHICKEN',
     price: 425,
-    img: "https://cdn-images-fishry.azureedge.net/product/3-Pcs-Chicken-500x360-089b5c2-kfc.png/xs",
-    brand: "KFC",
+    img:
+      'https://cdn-images-fishry.azureedge.net/product/3-Pcs-Chicken-500x360-089b5c2-kfc.png/xs',
+    brand: 'KFC',
   },
   {
     key: Math.random().toString(),
     id: 3,
-    name: "Pizza Chicken Fajita | S",
+    name: 'Pizza Chicken Fajita | S',
     price: 479,
-    img: "https://ph-web-bucket.s3.us-east-2.amazonaws.com/data/img/products/images/130-1584448058-Chicken-Fajita.jpg",
-    brand: "Pizza Hut",
+    img:
+      'https://ph-web-bucket.s3.us-east-2.amazonaws.com/data/img/products/images/130-1584448058-Chicken-Fajita.jpg',
+    brand: 'Pizza Hut',
   },
   {
     key: Math.random().toString(),
     id: 4,
-    name: "ZINGERATHA",
+    name: 'ZINGERATHA',
     price: 270,
-    img: "https://cdn-images-fishry.azureedge.net/product/Zingeratha-500x360-25d9c4f-kfc.png/xs",
-    brand: "KFC",
+    img:
+      'https://cdn-images-fishry.azureedge.net/product/Zingeratha-500x360-25d9c4f-kfc.png/xs',
+    brand: 'KFC',
   },
 ];
 
@@ -50,77 +54,77 @@ const employeesList = [
   {
     key: Math.random().toString(),
     id: 1,
-    name: "Hafiz Usman",
-    designation: "Developer",
-    company: "Facebook",
+    name: 'Hafiz Usman',
+    designation: 'Developer',
+    company: 'Facebook',
   },
   {
     key: Math.random().toString(),
     id: 2,
-    name: "Usman Najmi",
-    designation: "Database Engineer",
-    company: "Google",
+    name: 'Usman Najmi',
+    designation: 'Database Engineer',
+    company: 'Google',
   },
   {
     key: Math.random().toString(),
     id: 3,
-    name: "Saifullah",
-    designation: "Manager",
-    company: "Amazon",
+    name: 'Saifullah',
+    designation: 'Manager',
+    company: 'Amazon',
   },
   {
     key: Math.random().toString(),
     id: 4,
-    name: "Urwa",
-    designation: "Marketing Head",
-    company: "Flutter Google",
+    name: 'Urwa',
+    designation: 'Marketing Head',
+    company: 'Flutter Google',
   },
 ];
 
 const ordersList = [
   {
     key: Math.random().toString(),
-    orderNo: "MT-01",
-    customerName: "Usman",
-    customerAddress: "Gujranwala",
-    orderDate: "10 May, 2021",
-    shippingStatus: "Shiped",
-    productName: "ZINGER",
+    orderNo: 'MT-01',
+    customerName: 'Usman',
+    customerAddress: 'Gujranwala',
+    orderDate: '10 May, 2021',
+    shippingStatus: 'Shiped',
+    productName: 'ZINGER',
     price: 460,
-    brand: "KFC",
+    brand: 'KFC',
   },
   {
     key: Math.random().toString(),
-    orderNo: "MT-02",
-    customerName: "Saifullah",
-    customerAddress: "Sargodha",
-    orderDate: "12 May, 2021",
-    shippingStatus: "In-Process",
-    productName: "3 PCS CHICKEN",
+    orderNo: 'MT-02',
+    customerName: 'Saifullah',
+    customerAddress: 'Sargodha',
+    orderDate: '12 May, 2021',
+    shippingStatus: 'In-Process',
+    productName: '3 PCS CHICKEN',
     price: 425,
-    brand: "KFC",
+    brand: 'KFC',
   },
   {
     key: Math.random().toString(),
-    orderNo: "MT-03",
-    customerName: "Najmi",
-    customerAddress: "Lahore",
-    orderDate: "14 May, 2021",
-    shippingStatus: "Shiped",
-    productName: "Pizza Chicken Fajita | S",
+    orderNo: 'MT-03',
+    customerName: 'Najmi',
+    customerAddress: 'Lahore',
+    orderDate: '14 May, 2021',
+    shippingStatus: 'Shiped',
+    productName: 'Pizza Chicken Fajita | S',
     price: 479,
-    brand: "Pizza Hut",
+    brand: 'Pizza Hut',
   },
   {
     key: Math.random().toString(),
-    orderNo: "MT-04",
-    customerName: "M Fatima",
-    customerAddress: "RWP/ISB",
-    orderDate: "15 May, 2021",
-    shippingStatus: "Shiped",
-    productName: "ZINGERATHA",
+    orderNo: 'MT-04',
+    customerName: 'M Fatima',
+    customerAddress: 'RWP/ISB',
+    orderDate: '15 May, 2021',
+    shippingStatus: 'Shiped',
+    productName: 'ZINGERATHA',
     price: 270,
-    brand: "KFC",
+    brand: 'KFC',
   },
 ];
 
@@ -130,31 +134,28 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={"Home"}
+        initialRouteName={'Home'}
         screenOptions={{
           // headerShown: false,
-          headerTitleAlign: "center",
-          headerTintColor: "green",
+          headerTitleAlign: 'center',
+          headerTintColor: 'green',
           headerStyle: {
-            backgroundColor: "#A4DE02",
+            backgroundColor: '#A4DE02',
           },
-        }}
-      >
+        }}>
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={
-            {
-              // title: "Start Here",
-              // headerShown: false,
-              // headerTitleAlign: "center",
-              // headerTintColor: "white",
-              // headerStyle: {
-              //   backgroundColor: "blue",
-              // },
-              // headerRight: () => <Button title="Edit" />,
-            }
-          }
+          options={{
+            // title: "Start Here",
+            headerShown: false,
+            // headerTitleAlign: "center",
+            // headerTintColor: "white",
+            // headerStyle: {
+            //   backgroundColor: "blue",
+            // },
+            // headerRight: () => <Button title="Edit" />,
+          }}
         />
         <Stack.Screen
           name="Products List"
@@ -176,7 +177,7 @@ function App() {
           name="Product Details"
           component={ProductDetailsScreen}
           options={({ route }) => ({
-            headerTitle: "Detail Scrn " + route.params.name,
+            headerTitle: 'Detail Scrn ' + route.params.name,
           })}
         />
         <Stack.Screen name="Employees List" component={EmployeesListScreen} />
@@ -184,13 +185,17 @@ function App() {
           name="Employee Details"
           component={EmployeeDetailsScreen}
           options={({ route }) => ({
-            headerTitle: "Detail Scrn " + route.params.name,
+            headerTitle: 'Detail Scrn ' + route.params.name,
           })}
         />
         <Stack.Screen name="Orders List" component={OrdersListScreen} />
-        <Stack.Screen name="Order Details" component={OrderDetailsScreen} options={({ route }) => ({
-            headerTitle: "Detail Scrn " + route.params.orderNo,
-          })} />
+        <Stack.Screen
+          name="Order Details"
+          component={OrderDetailsScreen}
+          options={({ route }) => ({
+            headerTitle: 'Detail Scrn ' + route.params.orderNo,
+          })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -202,13 +207,12 @@ const BigButton = (props) => {
       activeOpacity={0.4}
       onPress={props.onPressEvent}
       style={{
-        backgroundColor: "#80C904",
+        backgroundColor: '#80C904',
         borderRadius: 50,
         padding: 20,
         margin: 30,
-      }}
-    >
-      <Text style={{ fontSize: 25, color: "white" }}>{props.text}</Text>
+      }}>
+      <Text style={{ fontSize: 25, color: 'white' }}>{props.text}</Text>
     </TouchableOpacity>
   );
 };
@@ -218,15 +222,15 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <BigButton
         text="Manage Products"
-        onPressEvent={() => navigation.navigate("Products List")}
+        onPressEvent={() => navigation.navigate('Products List')}
       />
       <BigButton
         text="Manage Employees"
-        onPressEvent={() => navigation.navigate("Employees List")}
+        onPressEvent={() => navigation.navigate('Employees List')}
       />
       <BigButton
         text="Manage Orders"
-        onPressEvent={() => navigation.navigate("Orders List")}
+        onPressEvent={() => navigation.navigate('Orders List')}
       />
     </View>
   );
@@ -250,22 +254,21 @@ const ProductsListScreen = ({ navigation }) => {
               key={data.key}
               activeOpacity={0.5}
               onPress={() =>
-                navigation.navigate("Product Details", {
+                navigation.navigate('Product Details', {
                   id: data.id,
                   name: data.name,
                   price: data.price,
                   img: data.img,
                   brand: data.brand,
                 })
-              }
-            >
-              <View style={{ width: "40%" }}>
+              }>
+              <View style={{ width: '40%' }}>
                 <Text>{data.name}</Text>
               </View>
-              <View style={{ width: "40%" }}>
+              <View style={{ width: '40%' }}>
                 <Text>{data.price}</Text>
               </View>
-              <View style={{ width: "50%" }}>
+              <View style={{ width: '50%' }}>
                 <Image style={styles.image} source={{ uri: data.img }} />
               </View>
             </TouchableOpacity>
@@ -280,9 +283,10 @@ const ProductDetailsScreen = ({ route }) => {
   return (
     <View>
       <Image style={styles.detailImage} source={{ uri: route.params.img }} />
-      <Text style={[styles.detailText, { color: "green", alignSelf: 'center' }]}>
-          Order Details
-        </Text>
+      <Text
+        style={[styles.detailText, { color: 'green', alignSelf: 'center' }]}>
+        Order Details
+      </Text>
       <View style={styles.rowDetail}>
         <Text style={styles.detailText}>Product ID: {route.params.id}</Text>
         <Text style={styles.detailText}>Product Name: {route.params.name}</Text>
@@ -317,14 +321,13 @@ const EmployeesListScreen = ({ navigation }) => {
               key={data.key}
               activeOpacity={0.5}
               onPress={() =>
-                navigation.navigate("Employee Details", {
+                navigation.navigate('Employee Details', {
                   id: data.id,
                   name: data.name,
                   designation: data.designation,
                   company: data.company,
                 })
-              }
-            >
+              }>
               <Text>{data.name}</Text>
               <Text>{data.designation}</Text>
             </TouchableOpacity>
@@ -338,9 +341,9 @@ const EmployeesListScreen = ({ navigation }) => {
 const EmployeeDetailsScreen = ({ route }) => {
   return (
     <View>
-      
-    <View style={{ alignSelf: "center", margin: 5 }}>
-    <Text style={[styles.detailText, { color: "green", alignSelf: 'center' }]}>
+      <View style={{ alignSelf: 'center', margin: 5 }}>
+        <Text
+          style={[styles.detailText, { color: 'green', alignSelf: 'center' }]}>
           Employee Information
         </Text>
 
@@ -377,7 +380,7 @@ const OrdersListScreen = ({ navigation }) => {
               key={data.key}
               activeOpacity={0.5}
               onPress={() =>
-                navigation.navigate("Order Details", {
+                navigation.navigate('Order Details', {
                   orderNo: data.orderNo,
                   customerName: data.customerName,
                   customerAddress: data.customerAddress,
@@ -387,8 +390,7 @@ const OrdersListScreen = ({ navigation }) => {
                   price: data.price,
                   brand: data.brand,
                 })
-              }
-            >
+              }>
               <Text>{data.orderNo}</Text>
 
               <Text>{data.productName}</Text>
@@ -404,8 +406,8 @@ const OrdersListScreen = ({ navigation }) => {
 const OrderDetailsScreen = ({ route }) => {
   return (
     <View>
-      <View style={{ alignSelf: "center" }}>
-        <Text style={[styles.detailText, { color: "green" }]}>
+      <View style={{ alignSelf: 'center' }}>
+        <Text style={[styles.detailText, { color: 'green' }]}>
           Customer Information
         </Text>
 
@@ -416,8 +418,8 @@ const OrderDetailsScreen = ({ route }) => {
           Customer Address: {route.params.customerAddress}
         </Text>
       </View>
-      <View style={{ alignSelf: "center" }}>
-        <Text style={[styles.detailText, { color: "green" }]}>
+      <View style={{ alignSelf: 'center' }}>
+        <Text style={[styles.detailText, { color: 'green' }]}>
           Order Detail
         </Text>
 
@@ -448,28 +450,28 @@ const OrderDetailsScreen = ({ route }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", justifyContent: "center" },
+  container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   headerView: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     padding: 30,
     margin: 2,
   },
   headerItem: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   image: { width: 80, height: 70 },
   detailImage: {
-    width: "100%",
+    width: '100%',
     height: 300,
   },
   rowDetail: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     padding: 10,
   },
   detailText: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     padding: 10,
   },
 });
